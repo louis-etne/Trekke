@@ -39,27 +39,25 @@ def build_chords(modulo, factor):
     return chords
 
 
-def build_image_with_chords(modulo, factor, reverse=True, text=True):
-    stroke = 'black'
+def build_image_with_chords(modulo, factor, color='rgb(0,0,0)', reverse=False, text=True):
     circle = build_chords(modulo, factor)
 
     if reverse:
         draw = simpleSVG.svg_class(fname="{}.svg".format(OUTPUT_NAME), bbx=RESOLUTION, bby=RESOLUTION, whiteback=False)
-        draw.rect(0, 0, RESOLUTION, RESOLUTION, fill='black') 
-        stroke = 'white'
+        draw.rect(0, 0, RESOLUTION, RESOLUTION, fill='black')
     else:
         draw = simpleSVG.svg_class(fname="{}.svg".format(OUTPUT_NAME), bbx=RESOLUTION, bby=RESOLUTION)
     draw.scale()
 
-    draw.circle(.5, .5, 300, stroke=stroke, stroke_width=1)
+    draw.circle(.5, .5, 300, stroke=color, stroke_width=1)
 
     if text:
-        draw.text(10, RESOLUTION - 10, 0, 'Modulo : %d, Facteur : %.2f' % (modulo, factor), stroke=stroke)
+        draw.text(10, RESOLUTION - 10, 0, 'Modulo : %d, Facteur : %.2f' % (modulo, factor), stroke=color)
 
     for chord in circle:
         draw.line(to_global_coords(chord['start']['x']), to_global_coords(chord['start']['y']),
                   to_global_coords(chord['end']['x']), to_global_coords(chord['end']['y']),
-                  stroke=stroke, stroke_width=1)
+                  stroke=color, stroke_width=1)
 
     draw.close()
     return draw
@@ -69,8 +67,8 @@ def build_circles(modulo, factor):
     # Calcule les coordonnées des cercles
     circles = []
     for index in range(modulo):
-        start = ?
-        end = ?
+        start = 0
+        end = 0
 
 
 def build_image_with_circles(modulo, factor, reverse=True, text=True):

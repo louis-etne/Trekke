@@ -20,6 +20,7 @@ class TrekkeWindow:
             'on_reverse_toggled': self.on_updated,
             'on_text_toggled': self.on_updated,
             'on_type_changed': self.on_updated,
+            'on_color_set': self.on_updated,
             'on_quit_clicked': Gtk.main_quit  
         }
 
@@ -30,6 +31,7 @@ class TrekkeWindow:
         self.preview = builder.get_object('preview')
         self.modulo = builder.get_object('modulo')
         self.factor = builder.get_object('factor')
+        self.color = builder.get_object('color')
         self.reverse = builder.get_object('reverse')
         self.text = builder.get_object('text')
         self.save = builder.get_object('save')
@@ -70,14 +72,14 @@ class TrekkeWindow:
         if self.type.get_active_id() == 'circles':
             print("Le type cercle n'est pas encore implémenté.")
             #build_image_with_circles(int(self.modulo.get_value()), self.factor.get_value(),
-            #                        self.reverse.get_active(), self.text.get_active())
+            #                        self.color.get_rgba().to_string(), self.reverse.get_active(),
+            #                        self.text.get_active())
         else:
             build_image_with_chords(int(self.modulo.get_value()), self.factor.get_value(),
-                                    self.reverse.get_active(), self.text.get_active())
+                                    self.color.get_rgba().to_string(), self.reverse.get_active(), self.text.get_active())
 
         self.preview.set_from_file('output.svg')
         self.save.set_sensitive(True)
-
 
 if __name__ == '__main__':
     app = TrekkeWindow()
