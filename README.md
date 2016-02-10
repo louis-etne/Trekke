@@ -5,9 +5,9 @@ rendu que vous pouvez obtenir :
 
 ![Un cœur obtenu avec Trekke](exemples/coeur.png)
 
-Ou encore (un grand classique) :
+Petite démonstration du logiciel
 
-![Modulo 100 et facteur 2](exemples/facteur_2.png)
+![Démonstration de Trekke](exemples/trekke_demo.gif)
 
 Le programme est fournit avec deux versions, une version possédant une interface graphique et une fonctionnant
 directement depuis le terminal.
