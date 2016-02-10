@@ -2,3 +2,4 @@
 *.png
 *.glade~
 __pycache__
+!exemples/*.png
