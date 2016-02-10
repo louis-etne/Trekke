@@ -18,7 +18,8 @@ class TrekkeWindow:
             'on_modulo_changed': self.on_updated,
             'on_factor_changed': self.on_updated,
             'on_reverse_toggled': self.on_updated,
-            'on_text_toggled': self.on_updated
+            'on_text_toggled': self.on_updated,
+            'on_quit_clicked': Gtk.main_quit  
         }
 
         builder.connect_signals(handler)
