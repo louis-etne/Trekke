@@ -68,8 +68,9 @@ class TrekkeWindow:
 
     def on_updated(self, spin):
         if self.type.get_active_id() == 'circles':
-            build_image_with_circles(int(self.modulo.get_value()), self.factor.get_value(),
-                                    self.reverse.get_active(), self.text.get_active())
+            print("Le type cercle n'est pas encore implémenté.")
+            #build_image_with_circles(int(self.modulo.get_value()), self.factor.get_value(),
+            #                        self.reverse.get_active(), self.text.get_active())
         else:
             build_image_with_chords(int(self.modulo.get_value()), self.factor.get_value(),
                                     self.reverse.get_active(), self.text.get_active())

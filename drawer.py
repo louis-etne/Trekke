@@ -68,7 +68,9 @@ def build_image_with_chords(modulo, factor, reverse=True, text=True):
 def build_circles(modulo, factor):
     # Calcule les coordonnées des cercles
     circles = []
-    
+    for index in range(modulo):
+        start = ?
+        end = ?
 
 
 def build_image_with_circles(modulo, factor, reverse=True, text=True):
