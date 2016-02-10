@@ -19,12 +19,14 @@ class TrekkeWindow:
             'on_factor_changed': self.on_updated,
             'on_reverse_toggled': self.on_updated,
             'on_text_toggled': self.on_updated,
+            'on_type_changed': self.on_updated,
             'on_quit_clicked': Gtk.main_quit  
         }
 
         builder.connect_signals(handler)
         self.window = builder.get_object('window')
 
+        self.type = builder.get_object('type')
         self.preview = builder.get_object('preview')
         self.modulo = builder.get_object('modulo')
         self.factor = builder.get_object('factor')
@@ -65,7 +67,13 @@ class TrekkeWindow:
         dialog.add_filter(filter_any)
 
     def on_updated(self, spin):
-        build_image(int(self.modulo.get_value()), self.factor.get_value(), self.reverse.get_active(), self.text.get_active())
+        if self.type.get_active_id() == 'circles':
+            build_image_with_circles(int(self.modulo.get_value()), self.factor.get_value(),
+                                    self.reverse.get_active(), self.text.get_active())
+        else:
+            build_image_with_chords(int(self.modulo.get_value()), self.factor.get_value(),
+                                    self.reverse.get_active(), self.text.get_active())
+
         self.preview.set_from_file('output.svg')
         self.save.set_sensitive(True)
 

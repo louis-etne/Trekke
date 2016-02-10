@@ -30,7 +30,7 @@ def to_coords(n):
     return {'x': to_x(n), 'y': to_y(n)}
 
 
-def build_circle(modulo, factor):
+def build_chords(modulo, factor):
     # Calcule les coordonnées des lignes
     chords = []
     for index in range(modulo):
@@ -39,9 +39,9 @@ def build_circle(modulo, factor):
     return chords
 
 
-def build_image(modulo, factor, reverse=True, text=True):
+def build_image_with_chords(modulo, factor, reverse=True, text=True):
     stroke = 'black'
-    circle = build_circle(modulo, factor)
+    circle = build_chords(modulo, factor)
 
     if reverse:
         draw = simpleSVG.svg_class(fname="{}.svg".format(OUTPUT_NAME), bbx=RESOLUTION, bby=RESOLUTION, whiteback=False)
@@ -65,6 +65,16 @@ def build_image(modulo, factor, reverse=True, text=True):
     return draw
 
 
+def build_circles(modulo, factor):
+    # Calcule les coordonnées des cercles
+    circles = []
+    
+
+
+def build_image_with_circles(modulo, factor, reverse=True, text=True):
+    pass
+
+
 def save_image_to_png(path):
     try:
         import cairosvg
@@ -81,5 +91,5 @@ if __name__ == '__main__':
         modulo = int(input("Entrez le modulo : "))
         factor = float(input("Entrez le facteur : "))
 
-        draw = build_image(modulo, factor)
+        draw = build_image_with_chords(modulo, factor)
         draw.display()
