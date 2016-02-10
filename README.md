@@ -3,14 +3,18 @@
 Trekke va vous permettre de réaliser des formes originales simplement à partir d'un modulo et d'un facteur. Voici le 
 rendu que vous pouvez obtenir :
 
-![Un cœur obtenu avec Trekke](exemples/coeur.png)
+![Un cœur obtenu avec Trekke](images/coeur.png)
 
 Petite démonstration du logiciel
 
-![Démonstration de Trekke](exemples/trekke_demo.gif)
+![Démonstration de Trekke](images/trekke_demo.gif)
 
 Le programme est fournit avec deux versions, une version possédant une interface graphique et une fonctionnant
 directement depuis le terminal.
+
+Voici l'interface graphique de Trekke (le gif datant un peu) :
+
+![Interface de la dernière version de Trekke](images/interface.png)
 
 ## Installation
 
